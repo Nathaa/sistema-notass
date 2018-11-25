@@ -15,7 +15,7 @@ class CreatePeriodosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('duracion');
-            $table->date('año');
+            $table->integer('año');
             $table->timestamps();
         });
     }
