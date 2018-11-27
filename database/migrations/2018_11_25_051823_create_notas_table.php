@@ -13,7 +13,7 @@ class CreateNotasTable extends Migration
     {
         Schema::create('notas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('notas');
+            $table->integer('notas');
             $table->string('descripcion');
             $table->timestamps();
         });

@@ -36,15 +36,15 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        @can('periodos.index')
+                        @can('alumnos.index')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('periodos.index') }}">Periodos</a>
+                            <a class="nav-link" href="{{ route('alumnos.index') }}">Alumnos</a>
                         </li>
                         @endcan
                         
-                        @can('alumnos.index')
+                        @can('periodos.index')
                         <li class="nav-item">
-                                <a class="nav-link" href="{{route('alumnos.index')}}">Alumnos</a>
+                                <a class="nav-link" href="{{route('periodos.index')}}">periodos</a>
                         </li>
                         @endcan
                         
@@ -55,7 +55,7 @@
                         @endcan
                         @can('cursos.index')
                         <li class="nav-item">
-                                <a class="nav-link" href="{{route('cursos.index')}}">Cursos</a>
+                                <a class="nav-link" href="{{route('cursos.index')}}">cursos</a>
                         </li>
                         @endcan
                         @can('roles.index')
@@ -73,8 +73,6 @@
                                     <a class="nav-link" href="{{route('rangos.index')}}">Rangos</a>
                         </li>
                         @endcan
-
-                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->

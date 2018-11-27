@@ -14,7 +14,9 @@ class RangoController extends Controller
      */
     public function index()
     {
-        //
+        $rangos = Rango::paginate();
+
+        return view('rangos.index', compact('rangos'));
     }
 
     /**
@@ -24,62 +26,75 @@ class RangoController extends Controller
      */
     public function create()
     {
-        //
+        return view('rangos.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $rango = Rango::create($request->all());
+
+        return redirect()->route('rangos.edit', $rango->id)
+         ->with('info', 'rango guardado con exito');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Rango  $rango
+     * @param \App\Rango $rango
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Rango $rango)
     {
-        //
+        return view('rangos.show', compact('rango'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Rango  $rango
+     * @param \App\Rango $rango
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Rango $rango)
     {
-        //
+        return view('rangos.edit', compact('rango'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Rango  $rango
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Rango               $rango
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Rango $rango)
     {
-        //
+        $rango->update($request->all());
+
+        return redirect()->route('rangos.edit', $rango->id)
+        ->with('info', 'rango actualizado con exito');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Rango  $rango
+     * @param \App\Rango $rango
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Rango $rango)
     {
-        //
+        $rango->delete();
+
+        return back()->with('info', 'Elimnado correctaamente');
     }
 }
