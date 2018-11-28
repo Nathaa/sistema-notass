@@ -5,7 +5,7 @@
 
 <div class="form-group">
         {{ Form::label('descripcion', 'Descripcion de la nota')}}
-        {{ Form::text('descripcion',null,['class' => 'form-control']) }}
+        {{ Form::integer('descripcion',null,['class' => 'form-control']) }}
 </div>
 
 

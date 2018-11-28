@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Caffeinated\Shinobi\Models\Role;
 
 class userController extends Controller
 {
@@ -40,7 +41,9 @@ class userController extends Controller
      */
     public function edit(user $user)
     {
-        return view('users.edit', compact('user'));
+        $roles = Role::get();
+
+        return view('users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -53,10 +56,14 @@ class userController extends Controller
      */
     public function update(Request $request, user $user)
     {
+        //actualiza usuario
         $user->update($request->all());
 
+        //actualizar roles
+        $user->roles()->sync($request->get('roles'));
+
         return redirect()->route('users.edit', $user->id)
-        ->with('info', 'user actualizado con exito');
+        ->with('info', 'Usuario actualizado con exito');
     }
 
     /**

@@ -1,6 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.admi')
 
-@section('content')
+@section('js')
+@endsection
+
+@section('contenido')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -21,4 +24,10 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+
+@section('css')
+
 @endsection
