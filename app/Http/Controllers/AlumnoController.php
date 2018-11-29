@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Alumno;
 use Illuminate\Http\Request;
+use App\Http\Requests\alumnoRequest;
 
 class AlumnoController extends Controller
 {
@@ -36,7 +37,7 @@ class AlumnoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(alumnoRequest $request)
     {
         $alumno = Alumno::create($request->all());
 
@@ -76,7 +77,7 @@ class AlumnoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Alumno $alumno)
+    public function update(alumnoRequest $request, Alumno $alumno)
     {
         $alumno->update($request->all());
 
