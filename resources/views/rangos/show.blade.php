@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admi')
 
 @section('content')
 <div class="container">
@@ -14,6 +14,7 @@
                   <p><strong>Duracion</strong> {{ $rango->duracion }}</p>
                   <p><strong>Fecha Inicio</strong> {{ $rango->fechaInicio }}</p>
                   <p><strong>FechaFinal</strong> {{ $rango->fechaFinal }}</p>
+                  <p><strong>Periodo</strong> {{ $rango->periodo->nombre }}</p>
                   
                 </div>
             </div>

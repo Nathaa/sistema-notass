@@ -77,6 +77,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('periodos/{periodo}', 'PeriodoController@show')->name('periodos.show')
     ->middleware('permission:periodos.show');
 
+    Route::get('periodos/{periodo}/rangos', 'PeriodoController@showRangos')->name('periodos.showRangos')
+ ->middleware('permission:periodos.showRangos');
+
     Route::delete('periodos/{periodo}', 'PeriodoController@destroy')->name('periodos.destroy')
     ->middleware('permission:periodos.destroy');
 

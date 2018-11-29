@@ -295,7 +295,7 @@
             @endcan
             @can('rangos.index')
             <li class="nav-item">
-                        <a class="nav-link" href="{{route('rangos.index')}}">Rangos</a>
+                        <a class="nav-link" href="{{route('rangos.index')}}">Rangos de Periodos</a>
             </li>
             @endcan
             <li><a href="">Asistencia</a></li>

@@ -17,6 +17,8 @@ class CreateRangosTable extends Migration
             $table->string('duracion');
             $table->date('fechaInicio');
             $table->date('fechaFinal');
+            $table->integer('periodo_id');
+            $table->foreign('periodo_id')->references('id')->on('periodos');
             $table->timestamps();
         });
     }

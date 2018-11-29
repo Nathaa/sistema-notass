@@ -18,6 +18,20 @@
     {{ Form::date('fechaFinal',null,['class' => 'form-control']) }}
 </div>
 
+<div class="form-group">
+        {!! Form::label('periodo_id', 'periodo del paciente') !!}
+        <div class="form-group">
+            <select name="periodo_id" id= "periodo_id" class="form-control" required>
+                <option value="">--periodo--</option>
+                @foreach ($periodos as $periodo)
+                <option value="{{ $periodo->id }}"> {{ $periodo->nombre}}</option>  
+                @endforeach
+            </select>    
+        </div>
+       
+        
+</div>
+
 
 <div class="form-group">
           

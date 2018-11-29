@@ -9,8 +9,8 @@
 </div>
 
 <div class="form-group">
-    {{ Form::label('año', 'Año del periodo')}}
-    {{ Form::integer('año',null,['class' => 'form-control']) }}
+      {{ Form::label('año', 'Año del periodo')}}
+      {{ Form::number('año',null,['class' => 'form-control']) }}
 </div>
 
 
