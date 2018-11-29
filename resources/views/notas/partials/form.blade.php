@@ -1,11 +1,11 @@
 <div class="form-group">
     {{ Form::label('notas', 'Nota del alumno')}}
-    {{ Form::integer('notas',null,['class' => 'form-control']) }}
+    {{ Form::number('notas',null,['class' => 'form-control']) }}
 </div>
 
 <div class="form-group">
         {{ Form::label('descripcion', 'Descripcion de la nota')}}
-        {{ Form::integer('descripcion',null,['class' => 'form-control']) }}
+        {{ Form::text('descripcion',null,['class' => 'form-control']) }}
 </div>
 
 

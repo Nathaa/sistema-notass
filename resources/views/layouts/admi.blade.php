@@ -65,6 +65,12 @@
       </a>
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
+
+          <div class="navbar-custom-menu">
+              <ul class="nav navbar-nav">
+                
+      
+          
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
@@ -73,6 +79,7 @@
               <i class="fa fa-envelope-o"></i>
               <span class="label label-success">4</span>
             </a>
+            
             <ul class="dropdown-menu">
               
               <li>

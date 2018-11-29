@@ -17,6 +17,16 @@
                   <p><strong>Periodo</strong> {{ $rango->periodo->nombre }}</p>
                   
                 </div>
+
+                <div class="card-footer">
+                       
+                        
+                        <a href="{{ route('rangos.indexCursos', $cursos->id) }}" 
+                            class="btn btn-sm btn-lg" >cursos</a>
+                        <a href="{{ route('rangos.indexAlumnos', $alumnos->id) }}" 
+                            class="btn btn-sm btn-lg" >alumnos</a>
+                       
+                </div>
             </div>
         </div>
     </div>

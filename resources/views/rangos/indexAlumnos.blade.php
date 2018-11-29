@@ -6,9 +6,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 rangos
-                 @can('rangos.create')
-                 <a href="{{ route('rangos.create') }}" 
+                 cursos
+                 @can('cursos.create')
+                 <a href="{{ route('cursos.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
                  Crear
                 </a>
@@ -25,33 +25,23 @@
                             </tr>
                         </thead>
                     <tbody>
-                        @foreach($rangos as $rango)
+                        @foreach($cursos as $curso)
                         <tr>
-                            <td>{{ $rango->id }}</td>
-                            <td>{{ $rango->nombre}}</td>
-                            <td>{{ $rango->duracion}}</td>
-                            <td>{{ $rango->fechaInicio}}</td>
-                            <td>{{ $rango->fechaFinal}}</td>
-                            <td>{{ $rango->periodo->nombre}}</td>
+                            <td>{{ $curso->id }}</td>
+                            <td>{{ $curso->nombre}}</td>
+                            <td>{{ $curso->descripcion}}</td>
+                          
                             <td width="10px">
-                               @can('rangos.show')
-                                 <a href="{{ route('rangos.show', $rango->id) }}"
-                                 class="btn btn-sm btn-default">
-                                    Ver
-                                 </a>
-                                @endcan
-                            </td>
-                            <td width="10px">
-                                    @can('rangos.edit')
-                                      <a href="{{ route('rangos.edit', $rango->id) }}"
+                                    @can('cursos.edit')
+                                      <a href="{{ route('cursos.edit', $curso->id) }}"
                                       class="btn btn-sm btn-default">
                                          Editar
                                       </a>
                                      @endcan
                                  </td>
                                  <td width="10px">
-                                        @can('rangos.destroy')
-                                          {!! Form::open(['route' => ['rangos.destroy', $rango->id],
+                                        @can('cursos.destroy')
+                                          {!! Form::open(['route' => ['cursos.destroy', $curso->id],
                                           'method' =>'DELETE']) !!}
                                           <button class="btn btn-sm btn-danger">
                                               Eliminar
@@ -63,7 +53,7 @@
                         @endforeach
                     </tbody>
                     </table>
-                    {{ $rangos->render() }}
+                    {{ $cursos->render() }}
                 </div>
             </div>
         </div>
