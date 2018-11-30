@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Periodo;
 use Illuminate\Http\Request;
+use App\Http\Requests\periodoRequest;
 
 class PeriodoController extends Controller
 {
@@ -55,7 +56,7 @@ class PeriodoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(periodoRequest $request)
     {
         $periodo = Periodo::create($request->all());
 
@@ -94,7 +95,7 @@ class PeriodoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Periodo $periodo)
+    public function update(periodoRequest $request, Periodo $periodo)
     {
         $periodo->update($request->all());
 
