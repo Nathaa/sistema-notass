@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Curso;
+use App\Alumno;
 use Illuminate\Http\Request;
 use App\Http\Requests\cursoRequest;
 
@@ -27,7 +28,31 @@ class CursoController extends Controller
      */
     public function create()
     {
-        return view('cursos.create');
+        $alumnos = Alumno::paginate();
+
+        return view('cursos.create', compact('alumnos'));
+    }
+
+    public function createAlumnos(Cursos $curso)
+    {
+        $alumnos = Alumno::paginate();
+
+        return view('cursos.createAlumnos', compact('alumnos'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showAlumnos(Cursos $curso)
+    {
+        $idCurso = $exped->id;
+        $alumnos = Alumno::where('curso_id', $idCurso)->get();
+
+        return view('cursos.showAlumnos', compact('alumnos'));
     }
 
     /**
@@ -41,7 +66,7 @@ class CursoController extends Controller
     {
         $curso = Curso::create($request->all());
 
-        return redirect()->route('cursos.edit', $curso->id)
+        return redirect()->route(compact('cursos.edit', 'alumnos.create'), $curso->id)
          ->with('info', 'curso guardado con exito');
     }
 
@@ -54,6 +79,9 @@ class CursoController extends Controller
      */
     public function show(Curso $curso)
     {
+        $alumnos = Alumno::get();
+
+        return view('cursos.show', compact('curso'));
     }
 
     /**
@@ -65,7 +93,9 @@ class CursoController extends Controller
      */
     public function edit(Curso $curso)
     {
-        return view('cursos.edit', compact('curso'));
+        $alumnos = Alumno::get();
+
+        return view('cursos.edit', compact('curso', 'alumnos'));
     }
 
     /**

@@ -9,7 +9,9 @@
 </div>
 
 
-<div class="form-group">
+<div class="btn-group btn-group-lg">
           
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
+    
+   
 </div>

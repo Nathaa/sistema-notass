@@ -13,11 +13,13 @@ class CursosTableSeeder extends Seeder
         Curso::create([
             'nombre' => 'Ciencias',
             'descripcion' => 'ciencias naturales',
+            'alumno_id' => '1',
            ]);
 
         Curso::create([
             'nombre' => 'matematicas',
             'descripcion' => 'matematicas I',
+            'alumno_id' => '2',
            ]);
     }
 }

@@ -17,6 +17,7 @@ class CreateAlumnosTable extends Migration
             $table->string('edad');
             $table->string('direccion');
             $table->string('encargado');
+
             $table->timestamps();
         });
     }

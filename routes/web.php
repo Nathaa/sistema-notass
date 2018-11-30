@@ -18,7 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('setperiodo/{id}', 'IndexController@setPeriodo')->name('app.set.periodo');
 
 //Routes
 
@@ -91,6 +90,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('cursos/store', 'CursoController@store')->name('cursos.store')
     ->middleware('permission:cursos.create');
 
+    Route::get('cursos/{curso}/alumnos', 'CursoController@createAlumnos')->name('cursos.createAlumnos')
+    ->middleware('permission:cursos.createAlumnos');
+
+    Route::get('cursos/{curso}/alumnos', 'CursoController@showAlumnos')->name('cursos.showAlumnos')
+    ->middleware('permission:cursos.showAlumnos');
+
     Route::get('cursos', 'CursoController@index')->name('cursos.index')
     ->middleware('permission:cursos.index');
 
@@ -155,11 +160,8 @@ Route::middleware(['auth'])->group(function () {
 
     //rangos
 
-    Route::get('rangos/{rango}/cursos', 'RangoController@showCursos')->name('rangos.showCursos')
-    ->middleware('permission:rangos.showCursos');
-
-    Route::get('rangos/{rango}/alumnos', 'RangoController@showAlumnos')->name('expedientes.showAlumnos')
-    ->middleware('permission:rangos.showAlumnos');
+    Route::get('rangos/{rango}/cursos', 'RangoController@createCursos')->name('rangos.createCursos')
+    ->middleware('permission:rangos.createCursos');
 
     Route::post('rangos/store', 'RangoController@store')->name('rangos.store')
     ->middleware('permission:rangos.create');
@@ -175,12 +177,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('rangos/{rango}', 'RangoController@show')->name('rangos.show')
     ->middleware('permission:rangos.show');
-
-    Route::get('rangos/{rango}/cursos', 'RangoController@indexCursos')->name('rangos.indexCursos')
- ->middleware('permission:rangos.indexCursos');
-
-    Route::get('rangos/{rango}/alumnos', 'RangoController@indexAlumnos')->name('rangos.indexAlumnos')
- ->middleware('permission:rangos.indexAlumnos');
 
     Route::delete('rangos/{rango}', 'RangoController@destroy')->name('rangos.destroy')
     ->middleware('permission:rangos.destroy');

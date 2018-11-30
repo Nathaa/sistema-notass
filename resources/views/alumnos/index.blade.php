@@ -29,9 +29,7 @@
                         <tr>
                             <td>{{ $alumno->id }}</td>
                             <td>{{ $alumno->nombre}}</td>
-                            <td>{{ $alumno->edad}}</td>
-                            <td>{{ $alumno->direccion}}</td>
-                            <td>{{ $alumno->encargado}}</td>
+                            
                             <td width="10px">
                                @can('alumnos.show')
                                  <a href="{{ route('alumnos.show', $alumno->id) }}"

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Curso;
 use App\Rango;
-use App\Alumno;
 use App\Periodo;
 use Illuminate\Http\Request;
 
@@ -31,39 +30,15 @@ class RangoController extends Controller
     {
         $periodos = Periodo::get();
         $cursos = Curso::get();
-        $alumnos = Alumno::get();
 
-        return view('rangos.create', compact('periodos', 'cursos', 'alumnos'));
+        return view('rangos.create', compact('periodos', 'cursos'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function indexCursos(Rangos $rango)
+    public function createCursos(Rango $rangos)
     {
-        $idRango = $rango->id;
-        $cursos = Curso::where('rango_id', $idRango)->get();
+        $cursos = Curso::paginate();
 
-        return view('rangos.indexCursos', compact('cursos'));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function indexAlumnos(Rangos $rango)
-    {
-        $idRango = $rango->id;
-        $alumnos = Alumno::where('rango_id', $idRango)->get();
-
-        return view('rangos.indexAlumnos', compact('alumnos'));
+        return view('rangos.createCursos', compact('cursos'));
     }
 
     /**
@@ -104,9 +79,8 @@ class RangoController extends Controller
     {
         $periodos = Periodo::get();
         $cursos = Curso::get();
-        $alumnos = Alumno::get();
 
-        return view('rangos.edit', compact('rango', 'periodos', 'cursos', 'alumnos'));
+        return view('rangos.edit', compact('rango', 'periodos', 'cursos'));
     }
 
     /**

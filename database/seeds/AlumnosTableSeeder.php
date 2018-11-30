@@ -23,12 +23,5 @@ class AlumnosTableSeeder extends Seeder
             'direccion' => 'dhbwedjwkd',
             'encargado' => 'Arturo Herrera',
            ]);
-
-        Alumno::create([
-            'nombre' => 'Gabriela Maria Salinas',
-            'edad' => '11',
-            'direccion' => 'sddhbwedjwkd',
-            'encargado' => 'Herrera',
-           ]);
     }
 }

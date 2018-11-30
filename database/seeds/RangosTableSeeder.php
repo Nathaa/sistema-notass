@@ -17,7 +17,6 @@ class RangosTableSeeder extends Seeder
             'fechaFinal' => '2018-09-01',
             'periodo_id' => '1',
             'curso_id' => '1',
-            'alumno_id' => '2',
        ]);
 
         Rango::create([
@@ -27,7 +26,6 @@ class RangosTableSeeder extends Seeder
             'fechaFinal' => '2017-11-05',
             'periodo_id' => '2',
             'curso_id' => '1',
-            'alumno_id' => '3',
            ]);
     }
 }
