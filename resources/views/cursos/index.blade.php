@@ -31,22 +31,7 @@
                             <td>{{ $curso->nombre}}</td>
                             <td>{{ $curso->descripcion}}</td>
                           
-                            <td width="10px">
-                                    @can('cursos.showAlumnos')
-                                      <a href="{{ route('cursos.showAlumnos', $curso->id) }}"
-                                      class="btn btn-sm btn-primary">
-                                        Alumnos asignados
-                                      </a>
-                                     @endcan
-                                 </td>
-                                 <td width="10px">
-                                        @can('cursos.createAlumnos')
-                                          <a href="{{ route('cursos.createAlumnos', $curso->id) }}"
-                                          class="btn btn-sm btn-primary">
-                                          Agregar Alumnos
-                                          </a>
-                                         @endcan
-                                     </td>
+                           
                             <td width="10px">
                                     @can('cursos.edit')
                                       <a href="{{ route('cursos.edit', $curso->id) }}"
@@ -65,7 +50,19 @@
                                         {!! Form::close() !!}
                                          @endcan
                                      </td>
+                                
+                                     <td width="10px">
+                                            @can('cursos.showAlumnos')
+                                              <a href="{{ route('cursos.showAlumnos', $curso->id) }}"
+                                              class="btn btn-sm btn-primary">
+                                                Alumnos asignados
+                                              </a>
+                                             @endcan
+                                         </td>
+                                         
+                                        
                         </tr>
+
                         @endforeach
                     </tbody>
                     </table>

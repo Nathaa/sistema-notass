@@ -90,14 +90,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('cursos/store', 'CursoController@store')->name('cursos.store')
     ->middleware('permission:cursos.create');
 
-    Route::get('cursos/{curso}/alumnos', 'CursoController@createAlumnos')->name('cursos.createAlumnos')
-    ->middleware('permission:cursos.createAlumnos');
+    Route::get('cursos', 'CursoController@index')->name('cursos.index')
+    ->middleware('permission:cursos.index');
 
     Route::get('cursos/{curso}/alumnos', 'CursoController@showAlumnos')->name('cursos.showAlumnos')
     ->middleware('permission:cursos.showAlumnos');
-
-    Route::get('cursos', 'CursoController@index')->name('cursos.index')
-    ->middleware('permission:cursos.index');
 
     Route::get('cursos/create', 'CursoController@create')->name('cursos.create')
     ->middleware('permission:cursos.create');

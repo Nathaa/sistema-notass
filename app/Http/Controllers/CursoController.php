@@ -28,16 +28,9 @@ class CursoController extends Controller
      */
     public function create()
     {
-        $alumnos = Alumno::paginate();
+        $alumnos = Alumno::get();
 
         return view('cursos.create', compact('alumnos'));
-    }
-
-    public function createAlumnos(Cursos $curso)
-    {
-        $alumnos = Alumno::paginate();
-
-        return view('cursos.createAlumnos', compact('alumnos'));
     }
 
     /**
@@ -47,9 +40,9 @@ class CursoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showAlumnos(Cursos $curso)
+    public function showAlumnos(Curso $curso)
     {
-        $idCurso = $exped->id;
+        $idCurso = $curso->id;
         $alumnos = Alumno::where('curso_id', $idCurso)->get();
 
         return view('cursos.showAlumnos', compact('alumnos'));
@@ -62,7 +55,7 @@ class CursoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(cursoRequest $request)
+    public function store(Request $request)
     {
         $curso = Curso::create($request->all());
 
@@ -81,7 +74,7 @@ class CursoController extends Controller
     {
         $alumnos = Alumno::get();
 
-        return view('cursos.show', compact('curso'));
+        return view('cursos.show', compact('alumnos'));
     }
 
     /**

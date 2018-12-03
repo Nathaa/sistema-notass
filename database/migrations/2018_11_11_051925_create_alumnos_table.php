@@ -17,7 +17,8 @@ class CreateAlumnosTable extends Migration
             $table->string('edad');
             $table->string('direccion');
             $table->string('encargado');
-
+            $table->integer('curso_id');
+            $table->foreign('curso_id')->references('id')->on('cursos');
             $table->timestamps();
         });
     }
