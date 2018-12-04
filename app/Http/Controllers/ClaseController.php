@@ -31,7 +31,7 @@ class ClaseController extends Controller
         $clases = Clase::get();
         $asistencias = Asistencia::get();
 
-        return view('clases.create', compact('clases'));
+        return view('clases.create', compact('clases', 'asistencias'));
     }
 
     /**

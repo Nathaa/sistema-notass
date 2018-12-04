@@ -7,7 +7,7 @@
             <div class="panel panel-default">
             <div class="panel-heading">
                  Clases/Sesiones
-                 @can('asistencias.create')
+                 @can('clases.create')
                  <a href="{{ route('clases.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
                  Crear
@@ -39,15 +39,15 @@
 
                             <td width="10px">
                                     @can('asistencias.edit')
-                                      <a href="{{ route('asistencias.edit', $clase->id) }}"
+                                      <a href="{{ route('clases.edit', $clase->id) }}"
                                       class="btn btn-sm btn-default">
                                          Editar
                                       </a>
                                      @endcan
                                  </td>
                                  <td width="10px">
-                                        @can('asistencias.destroy')
-                                          {!! Form::open(['route' => ['asistencias.destroy', $clase->id],
+                                        @can('clases.destroy')
+                                          {!! Form::open(['route' => ['clases.destroy', $clase->id],
                                           'method' =>'DELETE']) !!}
                                           <button class="btn btn-sm btn-danger">
                                               Eliminar
