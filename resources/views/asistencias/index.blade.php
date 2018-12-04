@@ -29,7 +29,7 @@
 
                              <td width="10px">
                                    
-                                      <a href=""
+                                      <a href="{{ route('clases.index') }}"
                                       class="btn btn-sm btn-primary pull-right">
                                          Gestionar
                                       </a>

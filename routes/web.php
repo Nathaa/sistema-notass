@@ -219,4 +219,16 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('clases/store', 'ClaseController@store')->name('clases.store')
     ->middleware('permission:clases.create');
+
+    Route::put('clases/{clase}', 'ClaseController@update')->name('clases.update')
+    ->middleware('permission:clases.edit');
+
+    Route::get('clases/{clase}/edit', 'ClaseController@edit')->name('clases.edit')
+    ->middleware('permission:clases.edit');
+
+    Route::get('clases/{clase}', 'ClaseController@show')->name('clases.show')
+    ->middleware('permission:clases.show');
+
+    Route::delete('clases/{clase}', 'ClaseController@destroy')->name('clases.destroy')
+    ->middleware('permission:clases.destroy');
 });

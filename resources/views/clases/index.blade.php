@@ -7,12 +7,12 @@
             <div class="panel panel-default">
             <div class="panel-heading">
                  Clases/Sesiones
-                
-                 <a href="" 
+                 @can('asistencias.create')
+                 <a href="{{ route('clases.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
                  Crear
                 </a>
-                
+                 @endcan
                 </div>
 
                 <div class="panel-body">
@@ -23,14 +23,40 @@
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
-                        <tbody>
-                        @foreach($alumnos as $alumno)
+                        @foreach($clases as $clase)
                         <tr>
-                            <td>{{ $alumno->nombre}}</td>
-                            <td><input type="checkbox"></td>
+                            <td>{{ $clase->fechaClase}}</td>
+
+                             <td width="10px">
+                                   
+                                      <a href=""
+                                      class="btn btn-sm btn-primary pull-right">
+                                         Gestionar
+                                      </a>
+                                    
+                                 </td>
+
+
+                            <td width="10px">
+                                    @can('asistencias.edit')
+                                      <a href="{{ route('asistencias.edit', $clase->id) }}"
+                                      class="btn btn-sm btn-default">
+                                         Editar
+                                      </a>
+                                     @endcan
+                                 </td>
+                                 <td width="10px">
+                                        @can('asistencias.destroy')
+                                          {!! Form::open(['route' => ['asistencias.destroy', $clase->id],
+                                          'method' =>'DELETE']) !!}
+                                          <button class="btn btn-sm btn-danger">
+                                              Eliminar
+                                          </button>
+                                        {!! Form::close() !!}
+                                         @endcan
+                                     </td>
                         </tr>
                         @endforeach
-                    </tbody>
                     </tbody>
                     </table>
                    
