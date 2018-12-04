@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Nota extends Model
 {
     protected $fillable = [
-        'notas', 'descripcion',
+        'notas', 'descripcion', 'curso_id', 'alumno_id',
     ];
 }
