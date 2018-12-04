@@ -180,4 +180,48 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('rangos/{rango}/edit', 'RangoController@edit')->name('rangos.edit')
     ->middleware('permission:rangos.edit');
+
+    //Asistencias
+    Route::get('asistencias', 'AsistenciaController@index')->name('asistencias.index')
+    ->middleware('permission:asistencias.index');
+
+    Route::get('asistencias/create', 'AsistenciaController@create')->name('asistencias.create')
+    ->middleware('permission:asistencias.create');
+
+    Route::post('asistencias/store', 'AsistenciaController@store')->name('asistencias.store')
+    ->middleware('permission:asistencias.create');
+
+    Route::put('asistencias/{asistencia}', 'AsistenciaController@update')->name('asistencias.update')
+    ->middleware('permission:asistencias.edit');
+
+    Route::get('asistencias/{asistencia}/edit', 'AsistenciaController@edit')->name('asistencias.edit')
+    ->middleware('permission:asistencias.edit');
+
+    Route::get('asistencias/{asistencia}', 'AsistenciaController@show')->name('asistencias.show')
+    ->middleware('permission:asistencias.show');
+
+    Route::delete('asistencias/{asistencia}', 'AsistenciaController@destroy')->name('asistencias.destroy')
+    ->middleware('permission:asistencias.destroy');
+
+    //Clases
+    Route::get('clases', 'ClaseController@index')->name('clases.index')
+    ->middleware('permission:clases.index');
+
+    Route::get('clases/create', 'ClaseController@create')->name('clases.create')
+    ->middleware('permission:clases.create');
+
+    Route::post('clases/store', 'ClaseController@store')->name('clases.store')
+    ->middleware('permission:clases.create');
+
+    Route::put('clases/{clase}', 'ClaseController@update')->name('clases.update')
+    ->middleware('permission:clases.edit');
+
+    Route::get('clases/{clase}/edit', 'ClaseController@edit')->name('clases.edit')
+    ->middleware('permission:clases.edit');
+
+    Route::get('clases/{clase}', 'ClaseController@show')->name('clases.show')
+    ->middleware('permission:clases.show');
+
+    Route::delete('clases/{clase}', 'ClaseController@destroy')->name('clases.destroy')
+    ->middleware('permission:clases.destroy');
 });
