@@ -305,8 +305,10 @@
                         <a class="nav-link" href="{{route('rangos.index')}}">Rangos de Periodos</a>
             </li>
             @endcan
-            <li><a href="">Asistencia</a></li>
-                  
+            @can('asistencias.index')
+            <li>
+                  <a class="nav-link" href="{{route('asistencias.index')}}">Control de Asistencias</a>
+             @endcan   
                 </ul>
 
 
@@ -387,7 +389,7 @@
               <div class="menu-info">
                 <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
 
-                <p>Will be 23 on April 24th</p>
+                <p>Will be 30 on April 24th</p>
               </div>
             </a>
           </li>
