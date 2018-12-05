@@ -7,14 +7,12 @@
                 <option value="{{ $asistencia->id }}"> {{ $asistencia->nombre}}</option>  
                 @endforeach
             </select>    
-        </div>
-       
-        
+        </div>        
 </div>
 
 <div class="form-group">
-    {{ Form::label('fechaFinal', 'Fecha de la clase')}}
-    {{ Form::date('fechaFinal',null,['class' => 'form-control']) }}
+    {{ Form::label('fechaClase', 'Fecha de la clase')}}
+    {{ Form::date('fechaClase',null,['class' => 'form-control']) }}
 </div>
 
 
