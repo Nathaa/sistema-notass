@@ -4,17 +4,22 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCursosTable extends Migration
+class CreateRangosTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('cursos', function (Blueprint $table) {
+        Schema::create('rangos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('duracion');
+            $table->date('fechaInicio');
+            $table->date('fechaFinal');
+            $table->integer('periodo_id');
+            $table->foreign('periodo_id')->references('id')->on('periodos');
+
             $table->timestamps();
         });
     }
@@ -24,6 +29,6 @@ class CreateCursosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cursos');
+        Schema::dropIfExists('rangos');
     }
 }

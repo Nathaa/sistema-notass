@@ -176,7 +176,7 @@
               <!-- The user image in the navbar-->
              
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">{{ Auth::user()->name }}</span>
+              <span class="hidden-xs">{{ auth::user()->name }}</span>
             </a>
             
             <ul class="dropdown-menu">
@@ -342,7 +342,8 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="alert alert-success">
-                        {{ session('info') }}
+                         {{ session('info') }}
+
         
                     </div>
         

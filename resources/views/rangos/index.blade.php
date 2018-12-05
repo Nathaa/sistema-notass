@@ -33,14 +33,16 @@
                             <td>{{ $rango->fechaInicio}}</td>
                             <td>{{ $rango->fechaFinal}}</td>
                             <td>{{ $rango->periodo->nombre}}</td>
+                         
                             <td width="10px">
-                               @can('rangos.show')
-                                 <a href="{{ route('rangos.show', $rango->id) }}"
-                                 class="btn btn-sm btn-default">
-                                    Ver
-                                 </a>
-                                @endcan
+                                    @can('rangos.showt')
+                                      <a href="{{ route('rangos.show', $rango->id) }}"
+                                      class="btn btn-sm btn-default">
+                                         Ver
+                                      </a>
+                                     @endcan
                             </td>
+
                             <td width="10px">
                                     @can('rangos.edit')
                                       <a href="{{ route('rangos.edit', $rango->id) }}"

@@ -14,6 +14,7 @@
                   <p><strong>Edad</strong> {{ $alumno->edad }}</p>
                   <p><strong>Direccion del alumno</strong> {{ $alumno->direccion }}</p>
                   <p><strong>Encargado de alumno</strong> {{ $alumno->encargado }}</p>
+                  <p><strong>fechaFinal</strong> {{ $alumno->curso->nombre }}</p>
                   
                 </div>
             </div>

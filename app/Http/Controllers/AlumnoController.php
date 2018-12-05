@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Curso;
 use App\Alumno;
 use Illuminate\Http\Request;
 use App\Http\Requests\alumnoRequest;
@@ -27,7 +28,9 @@ class AlumnoController extends Controller
      */
     public function create()
     {
-        return view('alumnos.create');
+        $cursos = Curso::get();
+
+        return view('alumnos.create', compact('cursos'));
     }
 
     /**
@@ -66,7 +69,9 @@ class AlumnoController extends Controller
      */
     public function edit(Alumno $alumno)
     {
-        return view('alumnos.edit', compact('alumno'));
+        $cursos = Curso::get();
+
+        return view('alumnos.edit', compact('alumno', 'cursos'));
     }
 
     /**

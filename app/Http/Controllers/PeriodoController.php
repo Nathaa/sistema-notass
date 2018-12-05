@@ -21,25 +21,6 @@ class PeriodoController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function listAll()
-    {
-        return Datatables::of(Periodo::select('id', 'nombre', 'duracion', 'año', 'descripcion')
-            ->orderBy('año', 'DESC')
-            ->get())->make(true);
-    }
-
-    public function setSession(Request $request)
-    {
-        $request->session()->put('idPeriodo', $request->id);
-
-        return response()->json(['Sesion' => 'Asignado']);
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
