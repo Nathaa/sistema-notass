@@ -16,6 +16,8 @@ class CreatePeriodosTable extends Migration
             $table->string('nombre');
             $table->string('duracion');
             $table->integer('año');
+            $table->unsignedInteger('curso_id');
+            $table->foreign('curso_id')->references('id')->on('cursos');
             $table->timestamps();
         });
     }
