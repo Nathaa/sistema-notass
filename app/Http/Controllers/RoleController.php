@@ -47,7 +47,7 @@ class roleController extends Controller
         $role->permissions()->sync($request->get('permissions'));
 
         return redirect()->route('roles.edit', $role->id)
-         ->with('info', 'role guardado con exito');
+         ->with('info', 'Rol guardado con éxito');
     }
 
     /**
@@ -93,7 +93,7 @@ class roleController extends Controller
         $role->permissions()->sync($request->get('permissions'));
 
         return redirect()->route('roles.edit', $role->id)
-        ->with('info', 'Role actualizado con exito');
+        ->with('info', 'Rol actualizado con éxito');
     }
 
     /**
@@ -107,6 +107,6 @@ class roleController extends Controller
     {
         $role->delete();
 
-        return back()->with('info', 'Elimnado correctaamente');
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

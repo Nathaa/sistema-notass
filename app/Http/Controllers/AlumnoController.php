@@ -87,7 +87,7 @@ class AlumnoController extends Controller
         $alumno->update($request->all());
 
         return redirect()->route('alumnos.edit', $alumno->id)
-        ->with('info', 'Alumno actualizado con exito');
+        ->with('info', 'Alumno actualizado con éxito');
     }
 
     /**
@@ -101,6 +101,6 @@ class AlumnoController extends Controller
     {
         $alumno->delete();
 
-        return back()->with('info', 'Elimnado correctaamente');
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

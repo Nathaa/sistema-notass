@@ -63,7 +63,7 @@ class userController extends Controller
         $user->roles()->sync($request->get('roles'));
 
         return redirect()->route('users.edit', $user->id)
-        ->with('info', 'Usuario actualizado con exito');
+        ->with('info', 'Usuario actualizado con éxito');
     }
 
     /**
@@ -77,6 +77,6 @@ class userController extends Controller
     {
         $user->delete();
 
-        return back()->with('info', 'Elimnado correctaamente');
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

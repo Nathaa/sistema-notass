@@ -4,19 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Coming Soon Bootstrap 4 Template Demo</title>
+    <title>My courses app</title>
     <meta name="description" content="Demo of A Free Coming Soon Bootstrap 4 Template by TemplateFlip.com."/>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
+    <meta name="author" content="Nathaly Amaya, Carlos Aguilar, Arely Bonilla">
+    <meta name="description" content="Página principal donde se introduce My courses app, una aplicación web para la gestión de cursos y el control de aistencia">
+    <meta name="keywords" content="coursos, courses, escuela, asistencias, notas, alumnos">
+
+    <meta name="og:title" content="MyCourses App">
+    <meta name="og:description" content="MyCourses App, una aplicación web para la gestión de cursos y el control de aistencia">
+    <meta name="og:image" content="">
+    <meta name="og:url" content="LINK AL ARTÍCULO">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MyCourses App">
+    <meta name="twitter:description" content="MyCourses App, una aplicación web para la gestión de cursos y el control de aistencia">
+    <meta name="twitter:site" content="@mycoursesapp">
+    <meta name="twitter:creator" content="@mycoursesapp">
+    <meta name="twitter:image:src" content="">
   </head>
   <body id="top"><div class="site-wrapper">
   <div class="site-wrapper-inner">
     <div class="cover-container">
       <div class="masthead clearfix">
         <div class="inner">
-          <h3 class="masthead-brand">Sistema de Notas</h3>
+          <h3 class="masthead-brand">Gestión de cursos</h3>
           <nav class="nav nav-masthead">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -31,8 +46,8 @@
           </nav>
         </div>
       </div><br>      <div class="inner cover">
-        <h1 class="cover-heading">Sistema de Gestion de Notas</h1>
-        <p class="lead cover-copy">Bienvenido al sistema de gestion de notas y asistencia para las escuelas.</p>
+        <h1 class="cover-heading">My courses app</h1>
+        <p class="lead cover-copy">Bienvenido al sistema de gestion de notas y control de asistencia.</p>
         @if (Route::has('login'))
         <div class="top-right links">
             @auth

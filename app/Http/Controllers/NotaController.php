@@ -41,7 +41,7 @@ class NotaController extends Controller
         $nota = Nota::create($request->all());
 
         return redirect()->route('notas.edit', $nota->id)
-         ->with('info', 'nota guardado con exito');
+         ->with('info', 'Nota guardado con éxito');
     }
 
     /**
@@ -80,7 +80,7 @@ class NotaController extends Controller
         $nota->update($request->all());
 
         return redirect()->route('notas.edit', $nota->id)
-        ->with('info', 'nota actualizado con exito');
+        ->with('info', 'Nota actualizada con éxito');
     }
 
     /**
@@ -94,6 +94,6 @@ class NotaController extends Controller
     {
         $nota->delete();
 
-        return back()->with('info', 'Elimnado correctaamente');
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

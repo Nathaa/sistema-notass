@@ -270,7 +270,7 @@
               <ul>
                   @can('periodos.index')  
                    <li class="nav-item">  
-                      <a class="nav-link" href="{{route('periodos.index')}}">Periodo</a>
+                      <a class="nav-link" href="{{route('periodos.index')}}">Período</a>
                     </li>
                   @endcan
                   
@@ -287,7 +287,7 @@
                    @endcan
                    @can('cursos.index')
                        <li class="nav-item">
-                         <a class="nav-link" href="{{route('cursos.index')}}">cursos</a>
+                         <a class="nav-link" href="{{route('cursos.index')}}">Cursos</a>
                        </li>
                     @endcan
                     @can('roles.index')
@@ -302,7 +302,7 @@
             @endcan
             @can('rangos.index')
             <li class="nav-item">
-                        <a class="nav-link" href="{{route('rangos.index')}}">Rangos de Periodos</a>
+                        <a class="nav-link" href="{{route('rangos.index')}}">Rangos de Períodos</a>
             </li>
             @endcan
             @can('asistencias.index')

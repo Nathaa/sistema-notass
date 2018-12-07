@@ -53,7 +53,7 @@ class RangoController extends Controller
         $rango = Rango::create($request->all());
 
         return redirect()->route('rangos.edit', $rango->id)
-         ->with('info', 'rango guardado con exito');
+         ->with('info', 'Rango guardado con éxito');
     }
 
     /**
@@ -96,7 +96,7 @@ class RangoController extends Controller
         $rango->update($request->all());
 
         return redirect()->route('rangos.edit', $rango->id)
-        ->with('info', 'rango actualizado con exito');
+        ->with('info', 'Rango actualizado con éxito');
     }
 
     /**
@@ -110,6 +110,6 @@ class RangoController extends Controller
     {
         $rango->delete();
 
-        return back()->with('info', 'Elimnado correctaamente');
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

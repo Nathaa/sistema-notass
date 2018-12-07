@@ -28,11 +28,7 @@
                             <td>{{ $clase->fechaClase}}</td>
 
                              <td width="10px">
-                                   
-                                      <a href=""
-                                      class="btn btn-sm btn-primary pull-right">
-                                         Gestionar
-                                      </a>
+                                
                                     
                                  </td>
 

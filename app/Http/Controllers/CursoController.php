@@ -60,7 +60,7 @@ class CursoController extends Controller
         $curso = Curso::create($request->all());
 
         return redirect()->route(compact('cursos.edit', 'alumnos.create'), $curso->id)
-         ->with('info', 'curso guardado con exito');
+         ->with('info', 'Curso guardado con éxito');
     }
 
     /**
@@ -104,7 +104,7 @@ class CursoController extends Controller
         $curso->update($request->all());
 
         return redirect()->route('cursos.edit', $curso->id)
-        ->with('info', 'curso actualizado con exito');
+        ->with('info', 'Curso actualizado con éxito');
     }
 
     /**
@@ -118,6 +118,6 @@ class CursoController extends Controller
     {
         $curso->delete();
 
-        return back()->with('info', 'Elimnado correctaamente');
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

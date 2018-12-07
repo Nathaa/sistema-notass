@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 alumnos
+                 Alumnos
                  @can('alumnos.create')
                  <a href="{{ route('alumnos.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
