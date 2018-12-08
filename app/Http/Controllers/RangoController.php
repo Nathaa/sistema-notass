@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Curso;
 use App\Rango;
 use App\Periodo;
 use Illuminate\Http\Request;
@@ -29,16 +28,8 @@ class RangoController extends Controller
     public function create()
     {
         $periodos = Periodo::get();
-        $cursos = Curso::get();
 
-        return view('rangos.create', compact('periodos', 'cursos'));
-    }
-
-    public function createCursos(Rango $rangos)
-    {
-        $cursos = Curso::paginate();
-
-        return view('rangos.createCursos', compact('cursos'));
+        return view('rangos.create', compact('periodos'));
     }
 
     /**
@@ -78,9 +69,8 @@ class RangoController extends Controller
     public function edit(Rango $rango)
     {
         $periodos = Periodo::get();
-        $cursos = Curso::get();
 
-        return view('rangos.edit', compact('rango', 'periodos', 'cursos'));
+        return view('rangos.edit', compact('rango', 'periodos'));
     }
 
     /**

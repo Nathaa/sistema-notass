@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Curso;
 use App\Periodo;
 use Illuminate\Http\Request;
 use App\Http\Requests\periodoRequest;
@@ -27,7 +28,9 @@ class PeriodoController extends Controller
      */
     public function create()
     {
-        return view('periodos.create');
+        $cursos = Curso::get();
+
+        return view('periodos.create', compact('cursos'));
     }
 
     /**
@@ -65,7 +68,9 @@ class PeriodoController extends Controller
      */
     public function edit(Periodo $periodo)
     {
-        return view('periodos.edit', compact('periodo'));
+        $cursos = Curso::get();
+
+        return view('periodos.edit', compact('periodo', 'cursos'));
     }
 
     /**

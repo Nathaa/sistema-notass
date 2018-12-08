@@ -308,8 +308,15 @@
             @can('asistencias.index')
             <li>
                   <a class="nav-link" href="{{route('asistencias.index')}}">Control de Asistencias</a>
-             @endcan   
-                </ul>
+            </li> 
+            @endcan   
+             @can('promedios.index')
+             <li>
+                   <a class="nav-link" href="{{route('promedios.index')}}">Control de Promedios</a>
+             </li>
+              @endcan   
+              
+          </ul>
 
 
       </div>

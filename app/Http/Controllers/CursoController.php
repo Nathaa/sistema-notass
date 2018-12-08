@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Curso;
 use App\Alumno;
 use Illuminate\Http\Request;
@@ -28,24 +29,34 @@ class CursoController extends Controller
      */
     public function create()
     {
-        $alumnos = Alumno::get();
+        $users = User::get();
 
-        return view('cursos.create', compact('alumnos'));
+        return view('cursos.create', compact('users'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function showAlumnos(Curso $curso)
     {
         $idCurso = $curso->id;
         $alumnos = Alumno::where('curso_id', $idCurso)->get();
 
         return view('cursos.showAlumnos', compact('alumnos'));
+    }
+
+    public function showCalificaciones(Curso $curso)
+    {
+        return view('cursos.showCalificaciones');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showcreate()
+    {
+        $users = User::get();
+
+        return view('cursos.create', compact('users'));
     }
 
     /**
@@ -59,7 +70,7 @@ class CursoController extends Controller
     {
         $curso = Curso::create($request->all());
 
-        return redirect()->route(compact('cursos.edit', 'alumnos.create'), $curso->id)
+        return redirect()->route(compact('cursos.edit'), $curso->id)
          ->with('info', 'Curso guardado con éxito');
     }
 
@@ -72,9 +83,7 @@ class CursoController extends Controller
      */
     public function show(Curso $curso)
     {
-        $alumnos = Alumno::get();
-
-        return view('cursos.show', compact('alumnos'));
+        return view('cursos.show');
     }
 
     /**
@@ -86,9 +95,9 @@ class CursoController extends Controller
      */
     public function edit(Curso $curso)
     {
-        $alumnos = Alumno::get();
+        $users = User::get();
 
-        return view('cursos.edit', compact('curso', 'alumnos'));
+        return view('cursos.edit', compact('curso', 'users'));
     }
 
     /**

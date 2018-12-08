@@ -11,13 +11,17 @@
                 @foreach($alumnos as $alumno)
                 <tr>
                 <div class="panel-body">
-                  
-                  <p><strong>Nombre Completo:</p>
-                  
-                    <UL>
-                    <LI> </strong> {{ $alumno->nombre }}
+                
+                        <div class="list-group">
+                        <OL>    
+                          <LI> </strong> {{ $alumno->nombre }}
+                              <a href="{{ route('cursos.showCalificaciones') }}" class="list-group-item list-group-item-action">Promedio</a>
+                        </OL>       
+                                      
                             
-                    </UL>  
+                        </div> 
+                   
+                 
                
                 </div>
                 </tr>

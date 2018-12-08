@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Nota;
+use App\Alumno;
 use Illuminate\Http\Request;
 
 class NotaController extends Controller
@@ -26,7 +27,9 @@ class NotaController extends Controller
      */
     public function create()
     {
-        return view('notas.create');
+        $alumnos = Alumno::get();
+
+        return view('notas.create', compact('alumnos'));
     }
 
     /**
@@ -64,7 +67,9 @@ class NotaController extends Controller
      */
     public function edit(Nota $nota)
     {
-        return view('notas.edit', compact('nota'));
+        $alumnos = Alumno::get();
+
+        return view('notas.edit', compact('nota', 'alumnos'));
     }
 
     /**

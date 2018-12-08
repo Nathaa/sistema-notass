@@ -96,6 +96,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('cursos/{curso}/alumnos', 'CursoController@showAlumnos')->name('cursos.showAlumnos')
     ->middleware('permission:cursos.showAlumnos');
 
+    Route::get('cursos/showCalificaciones', 'CursoController@showCalificaciones')->name('cursos.showCalificaciones')
+    ->middleware('permission:cursos.showCalificaciones');
+
     Route::get('cursos/create', 'CursoController@create')->name('cursos.create')
     ->middleware('permission:cursos.create');
 
@@ -224,4 +227,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::delete('clases/{clase}', 'ClaseController@destroy')->name('clases.destroy')
     ->middleware('permission:clases.destroy');
+
+    //promedios
+
+    Route::get('promedios', 'PromedioController@index')->name('promedios.index')
+     ->middleware('permission:promedios.index');
 });

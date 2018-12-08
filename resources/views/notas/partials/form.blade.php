@@ -8,6 +8,20 @@
         {{ Form::text('descripcion',null,['class' => 'form-control']) }}
 </div>
 
+<div class="form-group">
+    {!! Form::label('alumno_id', 'Agregar Alumno') !!}
+    <div class="form-group">
+        <select name="alumno_id" id= "alumno_id" class="form-control" required>
+            <option value="">--alumno--</option>
+            @foreach ($alumnos as $alumno)
+            <option value="{{ $alumno->id }}"> {{ $alumno->nombre}}</option>  
+            @endforeach
+        </select>    
+    </div>
+   
+    
+</div>
+
 
 <div class="form-group">
           
