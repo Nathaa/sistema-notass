@@ -51,14 +51,7 @@
                                          @endcan
                                      </td>
                                 
-                                     <td width="10px">
-                                            @can('cursos.showAlumnos')
-                                              <a href="{{ route('cursos.showAlumnos', $curso->id) }}"
-                                              class="btn btn-sm btn-primary">
-                                                Alumnos asignados
-                                              </a>
-                                             @endcan
-                                         </td>
+                                    
                                          
                                         
                         </tr>

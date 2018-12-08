@@ -330,8 +330,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Page Header
-       
+        <img src= "{{asset('img/logo.jpg')}}" class= "img-fluid" alt= "Responsive image" > 
+      
       </h1>
       <ol class="breadcrumb">
         
