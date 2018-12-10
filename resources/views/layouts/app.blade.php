@@ -13,7 +13,7 @@
 </head>
 <body>
     <div id="app">
-        @include('fragments.navbar')
+    
         <main class="py-4">
                 @if (session('info'))
                 <div class="container">

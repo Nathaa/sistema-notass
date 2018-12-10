@@ -17,6 +17,8 @@ class CreateNotasTable extends Migration
             $table->string('descripcion');
             $table->integer('alumno_id');
             $table->foreign('alumno_id')->references('id')->on('alumnos');
+            $table->integer('curso_id');
+            $table->foreign('curso_id')->references('id')->on('cursos');
             $table->timestamps();
         });
     }

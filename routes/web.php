@@ -96,7 +96,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('cursos/{curso}/alumnos', 'CursoController@showAlumnos')->name('cursos.showAlumnos')
     ->middleware('permission:cursos.showAlumnos');
 
-    Route::get('cursos/showCalificaciones', 'CursoController@showCalificaciones')->name('cursos.showCalificaciones')
+    Route::get('cursos/{idCurso}/mostrar/{idAlumno}', 'CursoController@showCalificaciones')->name('cursos.showCalificaciones')
     ->middleware('permission:cursos.showCalificaciones');
 
     Route::get('cursos/create', 'CursoController@create')->name('cursos.create')

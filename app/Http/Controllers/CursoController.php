@@ -43,23 +43,12 @@ class CursoController extends Controller
         return view('cursos.showAlumnos', compact('alumnos'));
     }
 
-    public function showCalificaciones(Curso $curso)
+    public function showCalificaciones($idCurso, $idAlumno)
     {
-        $alumnos = Alumno::find($id);
-        $cursos = Curso::find($id);
-        $notas = $alumnos->$cursos->notas;
-        $notas = Nota::where('curso_id', $idCurso)->get();
+        $notas = Nota::where('curso_id', $idCurso)->where('alumno_id', $idAlumno)->get();
+        $cantidad = Nota::where('curso_id', $idCurso)->where('alumno_id', $idAlumno)->count();
 
-        $notas = array();
-        foreach ($cursos->notas as $nota) {
-            if (!isset($notas[$nota->id_alumno])) {
-                $notas[$nota->id_alumno] = array();
-            }
-
-            $notas[$nota->id_alumno][$nota->id_curso] = $nota->nota;
-        }
-
-        return view('cursos.showCalificaciones')->with('cursos', $curso)->with('notas', $notas);
+        return view('cursos.showCalificaciones', compact('notas', 'cantidad'));
     }
 
     /**

@@ -18,9 +18,20 @@
             @endforeach
         </select>    
     </div>
-   
-    
 </div>
+
+<div class="form-group">
+    {!! Form::label('curso_id', 'Agregar Curso') !!}
+    <div class="form-group">
+        <select name="curso_id" id= "curso_id" class="form-control" required>
+            <option value="">--curso--</option>
+            @foreach ($cursos as $curso)
+            <option value="{{ $curso->id }}"> {{ $curso->nombre}}</option>  
+            @endforeach
+        </select>    
+    </div>
+</div>
+
 
 
 <div class="form-group">

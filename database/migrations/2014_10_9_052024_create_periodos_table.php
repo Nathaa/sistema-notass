@@ -13,10 +13,10 @@ class CreatePeriodosTable extends Migration
     {
         Schema::create('periodos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-            $table->string('duracion');
-            $table->integer('año');
-            $table->unsignedInteger('curso_id');
+            $table->string('nombre')->nullable();
+            $table->string('duracion')->nullable();
+            $table->integer('año')->nullable();
+            $table->unsignedInteger('curso_id')->nullable();
             $table->foreign('curso_id')->references('id')->on('cursos');
             $table->timestamps();
         });
