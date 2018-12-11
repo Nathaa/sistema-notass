@@ -10,7 +10,14 @@
                  @can('clases.create')
                  <a href="{{ route('clases.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
-                 Crear
+                 Agregar nueva clase
+                </a>
+                 @endcan
+
+                  @can('listados.create')
+                 <a href="{{ route('listados.create') }}" 
+                 class="btn btn-sm btn-primary pull-right">
+                 Gestionar asistencias
                 </a>
                  @endcan
                 </div>

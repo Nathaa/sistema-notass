@@ -232,4 +232,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('promedios', 'PromedioController@index')->name('promedios.index')
      ->middleware('permission:promedios.index');
+
+    //Listados
+
+    Route::get('listados/create', 'ListadoController@create')->name('listados.create')
+    ->middleware('permission:listados.create');
+
+    Route::post('listados/store', 'ListadoController@store')->name('listados.store')
+    ->middleware('permission:listados.create');
 });
