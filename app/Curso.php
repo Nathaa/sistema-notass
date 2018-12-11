@@ -14,4 +14,9 @@ class Curso extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function alumno()
+    {
+        return $this->belongsTo(Alumno::class);
+    }
 }
