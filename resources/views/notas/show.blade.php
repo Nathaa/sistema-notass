@@ -12,6 +12,7 @@
                 <div class="panel-body">
                   <p><strong>Nota</strong> {{ $nota->notas }}</p>
                   <p><strong>Descripcion</strong> {{ $nota->descripcion }}</p>
+                  <p><strong>Descripcion</strong> {{ $nota->porcentaje }}</p>
                   <p><strong>Nombre del alumno</strong> {{ $nota->alumno->nombre }}</p>
                   <p><strong>Curso</strong> {{ $nota->curso->nombre }}</p>
                   

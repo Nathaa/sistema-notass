@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Cursos
+                 <b>Cursos</b>
                  @can('cursos.create')
                  <a href="{{ route('cursos.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
@@ -15,12 +15,14 @@
                  @endcan
                 </div>
 
+                <body style="background-color:#D6DBDF;">
                 <div class="panel-body">
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th width="10px">ID</th>
                                 <th>Nombre</th>
+                                <th>Maestro Asignado</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -29,7 +31,7 @@
                         <tr>
                             <td>{{ $curso->id }}</td>
                             <td>{{ $curso->nombre}}</td>
-                            <td>{{ $curso->descripcion}}</td>
+                            <td>{{ $curso->user->name}}</td>
                           
                            
                             <td width="10px">
@@ -61,6 +63,7 @@
                     </table>
                     {{ $cursos->render() }}
                 </div>
+                </body>
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 rangos
+                 <b>Rangos</b>
                  @can('rangos.create')
                  <a href="{{ route('rangos.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
@@ -20,7 +20,8 @@
                         <thead>
                             <tr>
                                 <th width="10px">ID</th>
-                                <th>Nombre</th>
+                                <th>Modulo de un Periodo</th>
+                                <th>Periodo</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -29,9 +30,6 @@
                         <tr>
                             <td>{{ $rango->id }}</td>
                             <td>{{ $rango->nombre}}</td>
-                            <td>{{ $rango->duracion}}</td>
-                            <td>{{ $rango->fechaInicio}}</td>
-                            <td>{{ $rango->fechaFinal}}</td>
                             <td>{{ $rango->periodo->nombre}}</td>
                          
                             <td width="10px">

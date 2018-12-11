@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Alumnos
+                 <b>Alumnos</b>
                  @can('alumnos.create')
                  <a href="{{ route('alumnos.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
@@ -21,6 +21,7 @@
                             <tr>
                                 <th width="10px">ID</th>
                                 <th>Nombre</th>
+                                <th>Materias en Curso</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>

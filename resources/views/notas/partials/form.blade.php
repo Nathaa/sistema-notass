@@ -1,11 +1,16 @@
 <div class="form-group">
     {{ Form::label('notas', 'Nota del alumno')}}
-    {{ Form::number('notas',null,['class' => 'form-control']) }}
+    {{ Form::number('notas',null,['class' => 'form-control','step'=>'0.1']) }}
 </div>
 
 <div class="form-group">
-        {{ Form::label('descripcion', 'Descripcion de la nota')}}
+        {{ Form::label('descripcion', 'Descripcion de la Nota')}}
         {{ Form::text('descripcion',null,['class' => 'form-control']) }}
+</div>
+
+<div class="form-group">
+        {{ Form::label('porcentaje', 'Porcentaje de la Nota')}}
+        {{ Form::text('porcentaje',null,['class' => 'form-control']) }}
 </div>
 
 <div class="form-group">
@@ -37,5 +42,6 @@
 <div class="form-group">
           
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
-    <a href="{{ route('periodos.index') }}" class="btn btn-sm btn-danger" > Regresar atras</a>
+    <a href="{{ route('notas.index') }}" class="btn btn-sm btn-danger" > Regresar atras</a>
 </div>
+

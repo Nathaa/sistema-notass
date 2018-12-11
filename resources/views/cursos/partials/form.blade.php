@@ -21,11 +21,11 @@
    
     
 </div>
+    
 
-
-<div class="btn-group btn-group-lg">
+<div class="btn-group">
           
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
-    <a href="{{ route('users.index') }}" class="btn btn-sm btn-danger" > Regresar atras</a>   
+    <a href="{{ route('cursos.index') }}" class="btn btn-sm btn-danger" > Regresar atras</a>   
    
 </div>

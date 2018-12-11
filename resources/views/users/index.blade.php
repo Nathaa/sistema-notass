@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Usuarios
+                 <b>Usuarios</b>
                 
                 </div>
 
@@ -14,6 +14,7 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
+                                
                                 <th width="10px">ID</th>
                                 <th>Nombre</th>
                                 <th colspan="3">&nbsp;</th>
@@ -24,7 +25,6 @@
                         <tr>
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->name}}</td>
-                            >
                             <td width="10px">
                                @can('users.show')
                                  <a href="{{ route('users.show', $user->id) }}"

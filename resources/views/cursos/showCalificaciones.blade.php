@@ -5,24 +5,40 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                 Notas asignados
-                </div>
-                $conta=0;
-                @foreach($notas as $nota)
-                <tr>
-                <div class="panel-body">
+               
+                        <div class="btn-group btn-group-justified">
+                                <a class="btn btn-primary">Notas Asignadas</a>
+                        </div>
+               
                 
-                        <div class="list-group">
-                        <ol>    
-                          <li>{{ $nota->notas }}</li>     
-                        </ol>   
-                        </div> 
-                        {{ $conta=$nota->notas }}
-                      </div>
-                       </tr>
-                @endforeach
-                 $promedio=$conta/$cantidad
+                <body>
+                        <!-- Start of Table -->
+                        
+                        @foreach($notas as $nota)
+                        <table class="table table-inverse">
+                        <thead>
+                        <tr>
+                        
+                        <th>{{ $nota->descripcion }}</th>
+                        <th>{{ $nota->porcentaje}}</th>
+                        </tr>
+                        </thead>
+                        <tbody><tr>
+                        <td></td>
+                        <td>{{ $nota->notas }}</td>
+                        </tr><tr>
+                        
+                        </tbody>
+                        </table>
+                        @endforeach
+                        <div class="btn-group btn-group-justified">
+                                <a class="btn btn-primary">Promedio:</a>
+                                <a class="btn btn-danger">{{ $promedio }}</a>
+                              </div>   
+                        </body>
+                        </html>
+                        
+                    </body>
                 <div class="card-footer">
                        
                 </div>

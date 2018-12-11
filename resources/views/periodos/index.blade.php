@@ -8,7 +8,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 periodos
+                 <b>Periodos</b>
                  @can('periodos.create')
                  <a href="{{ route('periodos.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
@@ -22,7 +22,8 @@
                         <thead>
                             <tr>
                                 <th width="10px">ID</th>
-                                <th>Nombre</th>
+                                <th>Periodo</th>
+                                <th>Curso Impartido</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -31,8 +32,8 @@
                         <tr>
                             <td>{{ $periodo->id }}</td>
                             <td>{{ $periodo->nombre}}</td>
-                            <td>{{ $periodo->duracion}}</td>
-                            <td>{{ $periodo->año}}</td>
+                            <td>{{ $periodo->curso->nombre}}</td>
+                           
                             
                             <td width="10px">
                                     @can('periodos.edit')

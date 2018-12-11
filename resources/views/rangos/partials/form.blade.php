@@ -37,5 +37,5 @@
 <div class="form-group">
           
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
-    <a href="{{ route('periodos.index') }}" class="btn btn-sm btn-danger" > Regresar atras</a>
+    <a href="{{ route('rangos.index') }}" class="btn btn-sm btn-danger" > Regresar atras</a>
 </div>

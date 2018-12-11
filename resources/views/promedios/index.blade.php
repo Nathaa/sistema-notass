@@ -4,9 +4,12 @@
 <div class="list-group">
     
    @foreach($cursos as $curso)
-    <div class="list-group">
+    
+   <div class="list-group">
          
-        <a href="{{ route('cursos.showAlumnos', $curso->id) }}" class="list-group-item list-group-item-action">{{ $curso->nombre }}</a>
+        <a href="{{ route('cursos.showAlumnos', $curso->id) }}"
+          class="list-group-item list-group-item-action">
+          <b>{{ $curso->nombre }}</b></a>
 
           
     </div>

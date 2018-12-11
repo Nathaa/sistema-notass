@@ -14,7 +14,7 @@
                 
                         <div class="list-group">
                         <OL>    
-                          </strong> {{ $alumno->nombre }}
+                          <b></strong> {{ $alumno->nombre }}</b>
                               <a href="{{ route('cursos.showCalificaciones',[$alumno->curso_id,$alumno->id]) }}" class="list-group-item list-group-item-action">Promedio</a>
                         </OL>       
                                       

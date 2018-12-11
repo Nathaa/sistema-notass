@@ -6,6 +6,7 @@
   <title>{{ config('app.name', 'Laravel') }}</title>
   
   <!-- CSRF Token -->
+
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -22,6 +23,21 @@
   <link rel="stylesheet" href="{{asset('css/lib/admin_lte/skins/skin-blue.min.css')}}">
   <!--Estilo Personalizado CSS -->  
   <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
+  <meta name="google-site-verification" content="oT3EX28XrZ8ZFbUBEeSCYth8JwrLf7Ut5t9j9rzlGJ8" />
+  <meta name="author" content="Arely Bonilla, Nathaly Amaya">
+  <meta name="description" content="Página principal donde se introduce MyCurseApp, ¡Gestiona tus cursos online!">
+  <meta name="keywords" content="cursos, courses, escuela, asistencias, notas, alumnos, gestión">
+  <meta name="robots" content="index,follow"/>
+
+
+  <meta name="og:title" content="MyCurseApp">
+  <meta name="og:description" content="MyCurseApp, Página principal donde se introduce MyCurseApp, ¡Gestiona tus cursos online!">
+ 
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MyCurseApp">
+  <meta name="twitter:description" content="Página principal donde se introduce MyCurseApp, ¡Gestiona tus cursos online!">
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -189,7 +205,9 @@
                 </p>
               </li>
               <!-- Menu Body -->
+              
               <li class="user-body">
+                  <body style="background-color:#D6DBDF;">
                 <div class="row">
                   <div class="col-xs-4 text-center">
                     <a href="#">Followers</a>
@@ -202,6 +220,7 @@
                   </div>
                 </div>
                 <!-- /.row -->
+                  </body>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">

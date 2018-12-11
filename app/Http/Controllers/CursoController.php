@@ -48,7 +48,14 @@ class CursoController extends Controller
         $notas = Nota::where('curso_id', $idCurso)->where('alumno_id', $idAlumno)->get();
         $cantidad = Nota::where('curso_id', $idCurso)->where('alumno_id', $idAlumno)->count();
 
-        return view('cursos.showCalificaciones', compact('notas', 'cantidad'));
+        $acumulador = 0;
+        foreach ($notas as $n) {
+            $acumulador += $n->notas;
+        }
+        $promedio = 0;
+        $promedio = ($acumulador / $cantidad);
+
+        return view('cursos.showCalificaciones', compact('notas', 'promedio'));
     }
 
     /**
@@ -74,7 +81,7 @@ class CursoController extends Controller
     {
         $curso = Curso::create($request->all());
 
-        return redirect()->route(compact('cursos.edit'), $curso->id)
+        return redirect()->route('cursos.edit', $curso->id)
          ->with('info', 'Curso guardado con éxito');
     }
 
