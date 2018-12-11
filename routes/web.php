@@ -228,6 +228,9 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('clases/{clase}', 'ClaseController@destroy')->name('clases.destroy')
     ->middleware('permission:clases.destroy');
 
+    Route::get('clases/{clase}/listados', 'ClaseController@showListados')->name('clases.showListados')
+    ->middleware('permission:clases.showListados');
+
     //promedios
 
     Route::get('promedios', 'PromedioController@index')->name('promedios.index')

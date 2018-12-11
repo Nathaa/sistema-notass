@@ -11,12 +11,12 @@
 </div>
 
 <div class="form-group">
-        {!! Form::label('alumno_id', 'Seleccione el alumno') !!}
+        {!! Form::label('alumnoNombre', 'Seleccione el alumno') !!}
         <div class="form-group">
-            <select name="alumno_id" id= "alumno_id" class="form-control" required>
+            <select name="alumnoNombre" id= "alumnoNombre" class="form-control" required>
                 <option value="">--Alumnos--</option>
                 @foreach ($alumnos as $alumno)
-                <option value="{{ $alumno->id }}"> {{ $alumno->nombre}}</option>  
+                <option value="{{ $alumno->nombre }}"> {{ $alumno->nombre}}</option>  
                 @endforeach
             </select>    
         </div>     

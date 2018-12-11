@@ -25,7 +25,7 @@ class listadoRequest extends FormRequest
     {
         return [
             'clase_id' => 'numeric|min:1|max:100|required',
-            'alumno_id' => 'numeric|min:1|max:100|required',
+            'alumnoNombre' => 'max:120|required',
             'estadoAsistencia' => 'max:120|required',
         ];
     }

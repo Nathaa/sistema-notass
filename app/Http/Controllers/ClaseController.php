@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Clase;
 use App\Asistencia;
+use App\Listado;
 use Illuminate\Http\Request;
 use App\Http\Requests\claseRequest;
 
@@ -32,6 +33,14 @@ class ClaseController extends Controller
         $asistencias = Asistencia::get();
 
         return view('clases.create', compact('clases', 'asistencias'));
+    }
+
+    public function showListados(Clase $clase)
+    {
+        $idClase = $clase->id;
+        $listados = Listado::where('clase_id', $idClase)->get();
+
+        return view('clases.showListados', compact('listados'));
     }
 
     /**

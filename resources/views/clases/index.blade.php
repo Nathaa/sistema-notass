@@ -35,7 +35,12 @@
                             <td>{{ $clase->fechaClase}}</td>
 
                              <td width="10px">
-                                
+                                @can('listados.show')
+                                      <a href="{{ route('clases.showListados', $clase->id) }}"
+                                      class="btn btn-sm btn-default">
+                                         Ver
+                                      </a>
+                                     @endcan
                                     
                                  </td>
 

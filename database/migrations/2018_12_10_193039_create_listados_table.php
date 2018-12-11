@@ -17,10 +17,7 @@ class CreateListadosTable extends Migration
             $table->unsignedInteger('clase_id');
             $table->foreign('clase_id')->references('id')->on('clases');
             //Fin de llave foranea
-            //Llave foranea
-            $table->unsignedInteger('alumno_id');
-            $table->foreign('alumno_id')->references('id')->on('alumnos');
-            //Fin de llave foranea
+            $table->string('alumnoNombre');
             $table->string('estadoAsistencia');
             $table->timestamps();
         });

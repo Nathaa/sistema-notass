@@ -29,7 +29,7 @@
 
                              <td width="10px">
                                    
-                                      <a href="{{ route('clases.index') }}"
+                                      <a href="{{ route('clases.index', $asistencia->id) }}"
                                       class="btn btn-sm btn-primary pull-right">
                                          Gestionar
                                       </a>
