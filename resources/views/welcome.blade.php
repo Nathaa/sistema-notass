@@ -10,7 +10,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
-    <meta name="author" content="Nathaly Amaya, Carlos Aguilar, Arely Bonilla">
+    <meta name="author" content="Nathaly Amaya, Arely Bonilla">
     <meta name="description" content="Página principal donde se introduce My courses app, una aplicación web para la gestión de cursos y el control de aistencia">
     <meta name="keywords" content="coursos, courses, escuela, asistencias, notas, alumnos">
 

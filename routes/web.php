@@ -243,4 +243,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('listados/store', 'ListadoController@store')->name('listados.store')
     ->middleware('permission:listados.create');
+
+    //Asignaciones
+
+    Route::get('asignaciones/create', 'AsignacionController@create')->name('asignaciones.create')
+    ->middleware('permission:asignaciones.create');
+
+    Route::post('asignaciones/store', 'AsignacionController@store')->name('asignaciones.store')
+    ->middleware('permission:asignaciones.create');
 });

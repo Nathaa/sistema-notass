@@ -312,6 +312,14 @@
                       <li class="nav-item">
                         <a class="nav-link" href="{{route('roles.index')}}">Roles</a>
                      </li>
+
+                     @can('asignaciones.create')
+                    <li>
+                     <a class="nav-link" href="{{route('asignaciones.create')}}">Inscripción</a>
+                     </li>
+                      @endcan   
+
+                     
             @endcan
             @can('notas.index')
             <li class="nav-item">

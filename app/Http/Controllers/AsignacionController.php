@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Asignacion;
+use App\Alumno;
+use App\Curso;
+use Illuminate\Http\Request;
+use App\Http\Requests\asignacionRequest;
+
+class AsignacionController extends Controller
+{
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $asignaciones = Asignacion::get();
+        $alumnos = Alumno::get();
+        $cursos = Curso::get();
+
+        return view('asignaciones.create', compact('alumnos', 'cursos'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store(asignacionRequest $request)
+    {
+        //actualiza y obtiene los permisos y se le pasa un array permiso
+
+        $asignacion = Asignacion::create($request->all());
+
+        return redirect()->route('asignaciones.create', $asignacion->id)
+         ->with('info', 'Inscripción guardada con éxito');
+    }
+}

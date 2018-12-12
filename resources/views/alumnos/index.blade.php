@@ -21,7 +21,6 @@
                             <tr>
                                 <th width="10px">ID</th>
                                 <th>Nombre</th>
-                                <th>Materias en Curso</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -30,7 +29,6 @@
                         <tr>
                             <td>{{ $alumno->id }}</td>
                             <td>{{ $alumno->nombre}}</td>
-                            <td>{{ $alumno->curso->nombre}}</td>
                             
                             <td width="10px">
                                @can('alumnos.show')
