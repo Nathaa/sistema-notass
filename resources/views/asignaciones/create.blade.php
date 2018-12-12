@@ -15,7 +15,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                 Inscripciones a cursos
+                 Inscripción a cursos
                 </div>
 
                 <div class="panel-body">
