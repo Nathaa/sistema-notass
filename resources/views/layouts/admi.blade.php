@@ -286,61 +286,72 @@
           <!-- Left Side Of Navbar -->
           
               <ul>
-                  @can('periodos.index')  
-                   <li class="nav-item">  
-                      <a class="nav-link" href="{{route('periodos.index')}}">Período</a>
-                    </li>
-                  @endcan
-                  
-                    @can('alumnos.index')
-                     <li class="nav-item">
-                         <a class="nav-link" href="{{ route('alumnos.index')}}">Alumnos</a>
-                    </li>
-                     @endcan
-            
-                   @can('users.index')
+
+                    @can('users.index')
                    <li class="nav-item">
-                      <a class="nav-link" href="{{route('users.index')}}">Usuario</a>
+                      <a class="nav-link" href="{{route('users.index')}}">Administrar Usuarios</a>
+                      <ul>
+
+                      </ul>
                     </li>
                    @endcan
-                   @can('cursos.index')
-                       <li class="nav-item">
-                         <a class="nav-link" href="{{route('cursos.index')}}">Cursos</a>
-                       </li>
-                    @endcan
+
+                   
                     @can('roles.index')
                       <li class="nav-item">
                         <a class="nav-link" href="{{route('roles.index')}}">Roles</a>
                      </li>
+                     @endcan
 
-                     @can('asignaciones.create')
+
+                  @can('cursos.index')
+                       <li class="nav-item">
+                         <a class="nav-link" href="{{route('cursos.index')}}">Agregar Cursos</a>
+                       </li>
+                    @endcan
+
+                    @can('alumnos.index')
+                     <li class="nav-item">
+                         <a class="nav-link" href="{{ route('alumnos.index')}}">Agregar Alumnos</a>
+                    </li>
+                     @endcan
+
+                      @can('asignaciones.create')
                     <li>
-                     <a class="nav-link" href="{{route('asignaciones.create')}}">Inscripción</a>
+                     <a class="nav-link" href="{{route('asignaciones.create')}}">Inscripción a cursos</a>
                      </li>
-                      @endcan   
+                      @endcan  
 
-                     
-            @endcan
-            @can('notas.index')
-            <li class="nav-item">
-                        <a class="nav-link" href="{{route('notas.index')}}">Notas</a>
-            </li>
-            @endcan
-            @can('rangos.index')
-            <li class="nav-item">
-                        <a class="nav-link" href="{{route('rangos.index')}}">Rangos de Períodos</a>
-            </li>
-            @endcan
-            @can('asistencias.index')
-            <li>
-                  <a class="nav-link" href="{{route('asistencias.index')}}">Control de Asistencias</a>
-            </li> 
-            @endcan   
-             @can('promedios.index')
-             <li>
-                   <a class="nav-link" href="{{route('promedios.index')}}">Control de Promedios</a>
-             </li>
-              @endcan   
+                  @can('periodos.index')  
+                   <li class="nav-item">  
+                      <a class="nav-link" href="{{route('periodos.index')}}">Ingresar Período</a>
+                    </li>
+                  @endcan
+
+                  @can('rangos.index')
+                  <li class="nav-item">
+                        <a class="nav-link" href="{{route('rangos.index')}}">Crear Rangos de Períodos</a>
+                  </li>
+                  @endcan
+    
+                  @can('notas.index')
+                  <li class="nav-item">
+                              <a class="nav-link" href="{{route('notas.index')}}">Gestionar Notas</a>
+                  </li>
+                  @endcan
+
+                  @can('promedios.index')
+                          <li>
+                        <a class="nav-link" href="{{route('promedios.index')}}">Control de Promedios</a>
+                          </li>
+                 @endcan  
+                  
+                @can('asistencias.index')
+                <li>
+                      <a class="nav-link" href="{{route('asistencias.index')}}">Control de Asistencias</a>
+                </li> 
+                @endcan   
+           
               
           </ul>
 
