@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-class EstadoController extends Controller
+class estadoController extends Controller
 {
-    //
 }
