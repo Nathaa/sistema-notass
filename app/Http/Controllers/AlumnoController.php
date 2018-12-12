@@ -40,8 +40,10 @@ class AlumnoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(alumnoRequest $request)
+    public function store(Request $request)
     {
+        //actualiza y obtiene los permisos y se le pasa un array permiso
+
         $alumno = Alumno::create($request->all());
 
         return redirect()->route('alumnos.edit', $alumno->id)
