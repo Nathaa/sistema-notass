@@ -13,10 +13,7 @@ class CreateAlumnosCursosTable extends Migration
     {
         Schema::create('alumnos_cursos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('alumno_id');
-            $table->foreign('alumno_id')->references('id')->on('alumnos');
-            $table->integer('curso_id');
-            $table->foreign('curso_id')->references('id')->on('cursos');
+
             $table->timestamps();
         });
     }

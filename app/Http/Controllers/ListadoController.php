@@ -7,7 +7,6 @@ use App\Alumno;
 use App\Estado;
 use App\Listado;
 use Illuminate\Http\Request;
-use App\Http\Requests\listadoRequest;
 
 class ListadoController extends Controller
 {
@@ -32,14 +31,11 @@ class ListadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(listadoRequest $request)
+    public function store(Request $request)
     {
-        $estado->estados()->sync($request->get('estados'));
+        $estados = Estado::create($request->all());
 
-        $estado = Estado::create($request->all());
-        $listados = Listado::create($request->all());
-
-        return redirect()->route('listados.create', $listados->id)
+        return redirect()->route('listados.edit', $estados->id)
          ->with('info', 'Asistencia, guardada con éxito');
     }
 
@@ -68,7 +64,6 @@ class ListadoController extends Controller
     public function update(Request $request, listado $listado)
     {
         $estado->update($request->all());
-        $estado->estados()->sync($request->get('estados'));
 
         return redirect()->route('estados.edit', $estado->id)
         ->with('info', 'estado actualizado con éxito');

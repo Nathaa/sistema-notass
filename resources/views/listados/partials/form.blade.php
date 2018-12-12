@@ -39,5 +39,5 @@
 <div class="form-group">
           
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
-    <a href="{{ route('listados.create') }}" class="btn btn-sm btn-danger" > Regresar</a>
+    <a href="{{ route('clases.index') }}" class="btn btn-sm btn-danger" > Regresar</a>
 </div>

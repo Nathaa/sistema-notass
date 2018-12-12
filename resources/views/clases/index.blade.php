@@ -17,7 +17,7 @@
                   @can('listados.create')
                  <a href="{{ route('listados.create') }}" 
                  class="btn btn-sm btn-primary pull-right">
-                 Gestionar asistencias
+                 Gestionar clase
                 </a>
                  @endcan
                 </div>
@@ -67,7 +67,12 @@
                         @endforeach
                     </tbody>
                     </table>
-                   
+                  
+<div class="form-group">
+          
+   
+    <a href="{{ route('asistencias.index') }}" class="btn btn-sm btn-primary" > Regresar</a>
+</div>
                 </div>
             </div>
         </div>

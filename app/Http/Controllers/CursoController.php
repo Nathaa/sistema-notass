@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Nota;
 use App\User;
 use App\Curso;
-use App\Alumno;
+use App\Asignacion;
 use Illuminate\Http\Request;
 use App\Http\Requests\cursoRequest;
 
@@ -38,7 +38,7 @@ class CursoController extends Controller
     public function showAlumnos(Curso $curso)
     {
         $idCurso = $curso->id;
-        $alumnos = Alumno::where('curso_id', $idCurso)->get();
+        $alumnos = Asignacion::where('curso_id', $idCurso)->get();
 
         return view('cursos.showAlumnos', compact('alumnos'));
     }

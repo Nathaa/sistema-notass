@@ -251,4 +251,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('asignaciones/store', 'AsignacionController@store')->name('asignaciones.store')
     ->middleware('permission:asignaciones.create');
+
+    Route::get('asignaciones/{asignacion}/alumnos', 'AsignacionController@showAlumnos')->name('asignaciones.showAlumnos')
+    ->middleware('permission:cursos.showAlumnos');
 });

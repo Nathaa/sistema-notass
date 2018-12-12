@@ -21,7 +21,15 @@ class AsignacionController extends Controller
         $alumnos = Alumno::get();
         $cursos = Curso::get();
 
-        return view('asignaciones.create', compact('alumnos', 'cursos'));
+        return view('asignaciones.create', compact('alumnos', 'cursos', 'asignaciones'));
+    }
+
+    public function showAlumnos(Curso $curso)
+    {
+        $idCurso = $curso->id;
+        $alumnos = Asignacion::where('curso_id', $idCurso)->get();
+
+        return view('asignaciones.showAlumnos', compact('alumnos'));
     }
 
     /**
